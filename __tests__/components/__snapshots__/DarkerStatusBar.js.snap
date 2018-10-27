@@ -2,7 +2,7 @@
 
 exports[`DarkerStatusBar Test snapshot 1`] = `
 <StatusBar
-  backgroundColor="#3e6e85"
+  backgroundColor="#519657"
   barStyle="light-content"
 />
 `;
