@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DarkerStatusBar Test snapshot 1`] = `
+<StatusBar
+  backgroundColor="#3e6e85"
+  barStyle="light-content"
+/>
+`;

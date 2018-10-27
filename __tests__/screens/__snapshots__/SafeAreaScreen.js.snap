@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SafeAreaScreen Test Snapshot test 1`] = `
+<SafeAreaView
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#F5FCFF",
+        "flex": 1,
+        "justifyContent": "center",
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <DarkerStatusBar />
+  <Text>
+    text
+  </Text>
+</SafeAreaView>
+`;
