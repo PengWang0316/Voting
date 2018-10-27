@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavbarUserAvatar Snapshot has user _id 1`] = `
+<View
+  style={
+    Object {
+      "marginRight": 15,
+    }
+  }
+>
+  Avatar
+</View>
+`;
+
+exports[`NavbarUserAvatar Snapshot not user _id 1`] = `
+<View
+  style={
+    Object {
+      "marginRight": 15,
+    }
+  }
+>
+  Icon
+</View>
+`;
