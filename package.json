@@ -9,6 +9,7 @@
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "dependencies": {
+    "@kevinwang0316/react-native-snackbar-component": "^1.1.2",
     "axios": "^0.18.0",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "^0.57.4",
