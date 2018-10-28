@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginScreen Snapshot 1`] = `
+<SafeAreaScreen>
+  <LoginPanel
+    handleSnackbarUpdate={[Function]}
+  />
+  <Snackbar
+    autoHidingTime={1500}
+    backgroundColor=""
+    textMessage=""
+    visible={false}
+  />
+</SafeAreaScreen>
+`;
