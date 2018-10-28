@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfoScreen Snapshot 1`] = `
+<SafeAreaScreen>
+  <View
+    style={
+      Object {
+        "marginBottom": 35,
+      }
+    }
+  >
+    Avatar
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 35,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#81c784",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      displayName
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 10,
+      }
+    }
+  >
+    Button
+  </View>
+  <View>
+    Button
+  </View>
+</SafeAreaScreen>
+`;
