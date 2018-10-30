@@ -9,6 +9,7 @@ import { fetchCandidatesInfo } from '../actions/CandidateActions';
 type Props = {
   candidates: Object,
   fetchCandidatesInfo: Function,
+  navigation: Object,
 };
 
 const CANDIDATE_DETAIL_PAGE = 'CandidateDetail';
