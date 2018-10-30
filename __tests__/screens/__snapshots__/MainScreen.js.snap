@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainScreen Snapshot with candidate 1`] = `
+<SafeAreaScreen>
+  <View
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  >
+    <CandidateWithBackground
+      candidate={
+        Object {
+          "id": 1,
+        }
+      }
+      onClick={[Function]}
+    />
+  </View>
+</SafeAreaScreen>
+`;
+
+exports[`MainScreen Snapshot without candidate 1`] = `
+<SafeAreaScreen>
+  <View
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</SafeAreaScreen>
+`;
