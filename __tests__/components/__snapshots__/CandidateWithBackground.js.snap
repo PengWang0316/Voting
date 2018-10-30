@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CandidateWithBackground Snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "height": "50%",
+        "justifyContent": "center",
+        "width": "100%",
+      },
+      Object {
+        "backgroundColor": "#1a65dd",
+      },
+    ]
+  }
+>
+  <TouchableOpacity
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "height": "50%",
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <CacheableImage
+      source={
+        Object {
+          "uri": "photoUri",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 100,
+          "height": 200,
+          "width": 200,
+        }
+      }
+    />
+  </TouchableOpacity>
+</View>
+`;
