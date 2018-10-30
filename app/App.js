@@ -1,51 +1,66 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
  * @format
  * @flow
  */
+import React from 'react';
+import { createStackNavigator } from 'react-navigation';
 
-import React, { Component } from 'react';
-import {
-  Platform, StyleSheet, Text, View,
-} from 'react-native';
+import Theme from './Theme';
+import NavbarUserAvatar from './components/NavbarUserAvatar';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n'
-    + 'Shake or press menu button for dev menu',
-});
+// Top Screens
+import MainScreen from './screens/MainScreen';
+import CandidateDetailScreen from './screens/CandidateDetailScreen';
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+// Modal screens
+import LoginScreen from './screens/LoginScreen';
+import UserInfoScreen from './screens/UserInfoScreen';
+
+const navigationOptions = ({ navigation }) => (
+  {
+    headerStyle: {
+      backgroundColor: Theme.primary.main,
+    },
+    headerTintColor: Theme.primary.contrastText,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerTitle: 'Voting Now',
+    headerRight: <NavbarUserAvatar navigation={navigation} />,
   }
-}
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+const MainStack = createStackNavigator(
+  {
+    Main: { screen: MainScreen },
+    Login: { screen: LoginScreen },
+    UserInfo: { screen: UserInfoScreen },
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  {
+    mode: 'modal',
+    headerMode: 'none',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+);
+
+const CandidateDetailStack = createStackNavigator(
+  {
+    CandidateDetail: { screen: CandidateDetailScreen },
+    Login: { screen: LoginScreen },
+    UserInfo: { screen: UserInfoScreen },
   },
-});
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  },
+);
+
+const RootStack = createStackNavigator(
+  {
+    Main: { screen: MainStack },
+    CandidateDetail: { screen: CandidateDetailStack },
+  },
+  { navigationOptions },
+);
+
+export const App = () => <RootStack />;
+export default App;
