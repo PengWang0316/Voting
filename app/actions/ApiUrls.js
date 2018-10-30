@@ -20,3 +20,4 @@ export const API_LOGIN_WITH_PASSWORD = `${API_BASE_URL}/auth/loginWithPassword`;
 // export const API_LINK_ORDER_TO_ACCOUNT = `${API_BASE_URL}/linkOrderToAccount`;
 // export const API_FETCH_UNFINISHED_ORDERS = `${API_BASE_URL}/fetchUnfinishedOrders`;
 // export const API_UPDATE_FINISHED_ITEMS = `${API_BASE_URL}/updateFinishedItems`;
+export const API_FETCH_CANDIDATES_INFO = `${API_BASE_URL}/fetchCandidatesInfo`;
