@@ -43,6 +43,16 @@ exports[`CandidateWithBackground Snapshot 1`] = `
         }
       }
     />
+    <View>
+      <Icon
+        color="white"
+        name="tag-heart"
+        type="material-community"
+      />
+      <Text>
+        100
+      </Text>
+    </View>
   </TouchableOpacity>
 </View>
 `;

@@ -5,7 +5,9 @@ import { shallow } from 'enzyme';
 import { CandidateWithBackground } from '../../app/components/CandidateWithBackground/CandidateWithBackground';
 
 jest.mock('react-native-cacheable-image', () => 'CacheableImage');
+jest.mock('react-native-elements', () => ({ Icon: 'Icon' }));
 jest.mock('react-native', () => ({
+  Text: 'Text',
   View: 'View',
   TouchableOpacity: 'TouchableOpacity',
   StyleSheet: {
@@ -38,6 +40,7 @@ describe('CandidateWithBackground', () => {
       id: 1,
       isDemocracy: 1,
       photo: 'photoUri',
+      votes: 100,
     },
     onClick: jest.fn(),
   };

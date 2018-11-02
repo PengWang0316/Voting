@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import Theme from '../../Theme';
+
 export default StyleSheet.create({
   root: {
     width: '100%',
@@ -18,5 +20,18 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
+    marginBottom: 20,
+  },
+  voteView: {
+    // flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  voteText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: Theme.primary.contrastText,
+    marginLeft: 10,
   },
 });

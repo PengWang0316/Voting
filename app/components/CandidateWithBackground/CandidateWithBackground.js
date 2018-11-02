@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import CacheableImage from 'react-native-cacheable-image';
+import { Icon } from 'react-native-elements';
 
 import Styles from './Styles';
 
@@ -18,6 +19,14 @@ export const CandidateWithBackground = ({ candidate, onClick }: Props) => (
         style={Styles.avatar}
         source={{ uri: candidate.photo }}
       />
+      <View style={Styles.voteView}>
+        <Icon
+          name="tag-heart"
+          type="material-community"
+          color="white"
+        />
+        <Text style={Styles.voteText}>{candidate.votes}</Text>
+      </View>
     </TouchableOpacity>
   </View>
 );
