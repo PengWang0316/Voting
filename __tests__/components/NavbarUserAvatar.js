@@ -26,12 +26,12 @@ describe('NavbarUserAvatar', () => {
   });
 
   test('Click Avatar', () => {
-    const component = getShallowComponent({ ...defaultProps, user: { _id: 'id' } });
+    const component = getShallowComponent({ ...defaultProps, user: { id: 'id' } });
     component.find('Avatar').simulate('press');
     expect(defaultProps.navigation.navigate).toHaveBeenCalledTimes(2);
     expect(defaultProps.navigation.navigate).toHaveBeenLastCalledWith('UserInfo');
   });
 
-  test('Snapshot not user _id', () => expect(renderer.create(<NavbarUserAvatar {...defaultProps} />).toJSON()).toMatchSnapshot());
-  test('Snapshot has user _id', () => expect(renderer.create(<NavbarUserAvatar {...{ ...defaultProps, user: { _id: 'id' } }} />).toJSON()).toMatchSnapshot());
+  test('Snapshot not user id', () => expect(renderer.create(<NavbarUserAvatar {...defaultProps} />).toJSON()).toMatchSnapshot());
+  test('Snapshot has user id', () => expect(renderer.create(<NavbarUserAvatar {...{ ...defaultProps, user: { id: 'id' } }} />).toJSON()).toMatchSnapshot());
 });

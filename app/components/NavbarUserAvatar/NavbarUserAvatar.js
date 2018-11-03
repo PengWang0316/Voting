@@ -15,8 +15,8 @@ type Props = {
 
 export const NavbarUserAvatar = ({ navigation, user }: Props) => (
   <View style={Styles.rootView}>
-    {!user._id && <Icon type="font-awesome" name="user-circle" color="white" onPress={() => navigation.navigate(NAVIGATION_LOGIN_NAME)} />}
-    {user._id && <Avatar size={35} rounded icon={{ type: 'font-awesome', name: 'user-secret' }} onPress={() => navigation.navigate(NAVIGATION_LOGIN_INFO_NAME)} />}
+    {!user.id && <Icon type="font-awesome" name="user-circle" color="white" onPress={() => navigation.navigate(NAVIGATION_LOGIN_NAME)} />}
+    {user.id && <Avatar size={35} rounded icon={{ type: 'font-awesome', name: 'user-secret' }} onPress={() => navigation.navigate(NAVIGATION_LOGIN_INFO_NAME)} />}
   </View>
 );
 /* istanbul ignore next */
