@@ -21,3 +21,4 @@ export const API_LOGIN_WITH_PASSWORD = `${API_BASE_URL}/login`;
 // export const API_FETCH_UNFINISHED_ORDERS = `${API_BASE_URL}/fetchUnfinishedOrders`;
 // export const API_UPDATE_FINISHED_ITEMS = `${API_BASE_URL}/updateFinishedItems`;
 export const API_FETCH_CANDIDATES_INFO = `${API_BASE_URL}/fetchCandidatesInfo`;
+export const API_VOTE = `${API_BASE_URL}/vote`;
