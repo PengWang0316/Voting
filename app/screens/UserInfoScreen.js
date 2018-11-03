@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, StyleSheet } from 'react-native';
-import { Avatar, Button } from 'react-native-elements';
+import { Button } from 'react-native-elements';
+import CacheableImage from 'react-native-cacheable-image';
 
 import Theme from '../Theme';
 import SafeAreaScreen from './SafeAreaScreen';
+import { NO_PHOTO_URI } from '../config';
 import { logout as logoutAction } from '../actions/UserActions';
 
 type Props = {
@@ -28,10 +30,17 @@ const Styles = StyleSheet.create({
   logoutBtn: {
     width: '100%',
     backgroundColor: Theme.dangerousColor,
+    borderRadius: 15,
   },
   closeBtn: {
     width: '100%',
-    backgroundColor: Theme.primary.light,
+    backgroundColor: Theme.primary.main,
+    borderRadius: 15,
+  },
+  avatarImage: {
+    width: 130,
+    height: 130,
+    borderRadius: 70,
   },
 });
 
@@ -64,7 +73,10 @@ export const UserInfoScreen = ({ user, navigation, logout }: Props) => {
   return (
     <SafeAreaScreen>
       <View style={Styles.view}>
-        <Avatar icon={{ type: 'font-awesome', name: 'user-secret' }} size={130} rounded />
+        <CacheableImage
+          style={Styles.avatarImage}
+          source={{ uri: user.photo ? user.photo : NO_PHOTO_URI }}
+        />
       </View>
       <View style={Styles.view}>
         <Text style={Styles.usernameText}>{user.displayName}</Text>

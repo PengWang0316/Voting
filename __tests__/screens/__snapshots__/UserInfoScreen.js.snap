@@ -9,7 +9,20 @@ exports[`UserInfoScreen Snapshot 1`] = `
       }
     }
   >
-    Avatar
+    <CacheableImage
+      source={
+        Object {
+          "uri": "https://res.cloudinary.com/orderstaker/image/upload/v1541270969/voding/xxx048-512.png",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 70,
+          "height": 130,
+          "width": 130,
+        }
+      }
+    />
   </View>
   <View
     style={
