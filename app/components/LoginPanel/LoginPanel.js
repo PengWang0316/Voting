@@ -4,11 +4,14 @@ import { View } from 'react-native';
 import LoginForm from '../LoginForm';
 import styles from './Styles';
 
-type Props = { navigation: Object };
+type Props = {
+  navigation: Object,
+  handleSnackbarUpdate: Function,
+};
 
-export const LoginPanel = ({ handleSnackbarUpdat, navigation }: Props) => (
+export const LoginPanel = ({ handleSnackbarUpdate, navigation }: Props) => (
   <View style={styles.internalContainer}>
-    <LoginForm handleSnackbarUpdat={handleSnackbarUpdat} navigation={navigation} />
+    <LoginForm handleSnackbarUpdate={handleSnackbarUpdate} navigation={navigation} />
   </View>
 );
 export default LoginPanel;

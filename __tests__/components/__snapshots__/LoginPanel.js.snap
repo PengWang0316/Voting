@@ -8,6 +8,8 @@ exports[`LoginPanel Snapshot 1`] = `
     }
   }
 >
-  <LoginForm />
+  <LoginForm
+    handleSnackbarUpdate={[MockFunction]}
+  />
 </View>
 `;
