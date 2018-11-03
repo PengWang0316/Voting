@@ -1,9 +1,12 @@
 import axios from 'axios';
 
-import { USER_LOGOUT_SUCCESS, USER_LOGIN_SUCCESS, PARSER_USER_FROM_JWT_SUCCESS } from './ActionTypes';
 import {
-  API_JWTMESSAGE_VERIFY, API_LOGIN_WITH_PASSWORD,
+  USER_LOGOUT_SUCCESS, USER_LOGIN_SUCCESS, PARSER_USER_FROM_JWT_SUCCESS, VOTE_SUCCESS,
+} from './ActionTypes';
+import {
+  API_JWTMESSAGE_VERIFY, API_LOGIN_WITH_PASSWORD, API_VOTE,
 } from './ApiUrls';
+import { addVoteSuccess } from './CandidateActions';
 // import { JWT_MESSAGE } from '../config';
 
 
@@ -20,6 +23,11 @@ const userLoginSuccess = user => ({
 const parserUserFromJwtSuccess = user => ({
   type: PARSER_USER_FROM_JWT_SUCCESS,
   user,
+});
+
+const voteSuccess = voteId => ({
+  type: VOTE_SUCCESS,
+  vote_id: voteId,
 });
 
 export const emptyUser = () => userLoginSuccess({});
@@ -43,3 +51,8 @@ export const loginWithPassword = ({ username, password }) => dispatch => axios.g
 
 export const parserUserFromJwt = jwtMessage => dispatch => axios.get(API_JWTMESSAGE_VERIFY, { params: { jwtMessage } })
   .then(({ data }) => dispatch(parserUserFromJwtSuccess(data))).catch(err => console.error(err));
+
+export const vote = (userId, candidateId) => dispatch => axios.put(API_VOTE).then(() => {
+  dispatch(voteSuccess(candidateId));
+  dispatch(addVoteSuccess());
+}).catch(err => console.error(err));

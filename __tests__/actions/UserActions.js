@@ -3,9 +3,12 @@ import MockAdapter from 'axios-mock-adapter';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { USER_LOGOUT_SUCCESS, USER_LOGIN_SUCCESS, PARSER_USER_FROM_JWT_SUCCESS } from '../../app/actions/ActionTypes';
 import {
-  API_JWTMESSAGE_VERIFY, API_LOGIN_WITH_PASSWORD,
+  USER_LOGOUT_SUCCESS, USER_LOGIN_SUCCESS,
+  PARSER_USER_FROM_JWT_SUCCESS, VOTE_SUCCESS, ADD_VOTE_SUCCESS,
+} from '../../app/actions/ActionTypes';
+import {
+  API_JWTMESSAGE_VERIFY, API_LOGIN_WITH_PASSWORD, API_VOTE,
 } from '../../app/actions/ApiUrls';
 // import { JWT_MESSAGE } from '../../app/config';
 import * as UserActions from '../../app/actions/UserActions';
@@ -51,7 +54,7 @@ describe('UserActions', () => {
     // localStorage.removeItem(JWT_MESSAGE);  React Native could not use the localStorage
     const user = { username: 'username', password: 'password' };
     const expectActions = [
-      { type: USER_LOGIN_SUCCESS, user: { ...user, jwt: 'jwt' } }
+      { type: USER_LOGIN_SUCCESS, user: { ...user, jwt: 'jwt' } },
     ];
     axiosMock.onGet(API_LOGIN_WITH_PASSWORD, { params: user }).reply(200, { ...user, jwt: 'jwt' });
     const store = mockStore();
@@ -92,5 +95,39 @@ describe('UserActions', () => {
     const store = mockStore();
     store.dispatch(UserActions.emptyUser());
     expect(store.getActions()).toEqual(expectActions);
+  });
+
+  test('vote', () => {
+    const mockErrorFn = jest.fn();
+    console.error = mockErrorFn;
+    const candidateId = 'candidateId';
+    const userId = 'userId';
+    const expectActions = [
+      {
+        type: VOTE_SUCCESS,
+        vote_id: candidateId,
+      },
+      { type: ADD_VOTE_SUCCESS },
+    ];
+    axiosMock.onPut(API_VOTE).reply(200, null);
+    const store = mockStore();
+
+    return store.dispatch(UserActions.vote(userId, candidateId))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectActions);
+        expect(console.error).not.toHaveBeenCalled();
+      });
+  });
+
+  test('vote with network error', () => {
+    const mockErrorFn = jest.fn();
+    console.error = mockErrorFn;
+    const candidateId = 'candidateId';
+    const userId = 'userId';
+    axiosMock.onPut(API_VOTE).networkError();
+    const store = mockStore();
+
+    return store.dispatch(UserActions.vote(userId, candidateId))
+      .then(() => expect(console.error).toHaveBeenCalledTimes(1));
   });
 });
