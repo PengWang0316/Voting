@@ -2,23 +2,45 @@
 
 exports[`NavbarUserAvatar Snapshot has user id 1`] = `
 <View
-  style={
-    Object {
-      "marginRight": 15,
-    }
-  }
+  style="rootView"
 >
-  Avatar
+  <TouchableHighlight
+    onPress={[Function]}
+  >
+    <CacheableImage
+      source={
+        Object {
+          "uri": "https://res.cloudinary.com/orderstaker/image/upload/v1541270969/voding/xxx048-512.png",
+        }
+      }
+      style="avatarImage"
+    />
+  </TouchableHighlight>
+</View>
+`;
+
+exports[`NavbarUserAvatar Snapshot has user id with photo 1`] = `
+<View
+  style="rootView"
+>
+  <TouchableHighlight
+    onPress={[Function]}
+  >
+    <CacheableImage
+      source={
+        Object {
+          "uri": "photo",
+        }
+      }
+      style="avatarImage"
+    />
+  </TouchableHighlight>
 </View>
 `;
 
 exports[`NavbarUserAvatar Snapshot not user id 1`] = `
 <View
-  style={
-    Object {
-      "marginRight": 15,
-    }
-  }
+  style="rootView"
 >
   Icon
 </View>
