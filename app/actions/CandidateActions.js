@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_CANDIDATES_INFO_SUCCESS } from './ActionTypes';
+import { FETCH_CANDIDATES_INFO_SUCCESS, ADD_VOTE_SUCCESS } from './ActionTypes';
 import { API_FETCH_CANDIDATES_INFO } from './ApiUrls';
 
 const fetchCandidatesInfoSuccess = candidates => ({
@@ -10,4 +10,6 @@ const fetchCandidatesInfoSuccess = candidates => ({
 export const fetchCandidatesInfo = () => dispatch => axios.get(API_FETCH_CANDIDATES_INFO)
   .then(({ data }) => dispatch(fetchCandidatesInfoSuccess(data))).catch(err => console.error(err));
 
-export default fetchCandidatesInfo;
+export const addVoteSuccess = () => ({
+  type: ADD_VOTE_SUCCESS,
+});

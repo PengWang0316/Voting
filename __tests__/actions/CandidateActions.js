@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 import * as CandidateActions from '../../app/actions/CandidateActions';
 import { API_FETCH_CANDIDATES_INFO } from '../../app/actions/ApiUrls';
-import { FETCH_CANDIDATES_INFO_SUCCESS } from '../../app/actions/ActionTypes';
+import { FETCH_CANDIDATES_INFO_SUCCESS, ADD_VOTE_SUCCESS } from '../../app/actions/ActionTypes';
 
 const axiosMock = new MockAdapter(axios); // Setting up a mock for axios.
 const middlewares = [thunk];
@@ -34,4 +34,6 @@ describe('CandidateActions', () => {
       expect(console.error).toHaveBeenCalledTimes(1);
     });
   });
+
+  test('addVoteSuccess', () => expect(CandidateActions.addVoteSuccess()).toEqual({ type: ADD_VOTE_SUCCESS }));
 });
