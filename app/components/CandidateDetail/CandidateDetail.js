@@ -11,6 +11,7 @@ type Props = {
   candidate: Object,
   user: Object,
   vote: Function,
+  navigation: Object,
 };
 
 /** The component to show the detailed information for a candidate. */
@@ -23,7 +24,10 @@ export class CandidateDetail extends Component<Props> {
    */
   handleVoteBtnClick = () => this.setState(
     { isSubmited: true },
-    () => this.props.vote(this.props.user.jwt, this.props.candidate.id),
+    () => {
+      this.props.vote(this.props.user.jwt, this.props.candidate.id);
+      this.props.navigation.goBack();
+    },
   );
 
   /**
