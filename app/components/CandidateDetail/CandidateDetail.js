@@ -23,7 +23,7 @@ export class CandidateDetail extends Component<Props> {
    */
   handleVoteBtnClick = () => this.setState(
     { isSubmited: true },
-    () => this.props.vote(this.props.user.id, this.props.candidate.id),
+    () => this.props.vote(this.props.user.jwt, this.props.candidate.id),
   );
 
   /**

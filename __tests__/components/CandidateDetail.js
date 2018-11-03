@@ -26,11 +26,11 @@ describe('CandidateDetail', () => {
   });
 
   test('handleVoteBtnClick', () => {
-    const component = getShallowComponent({ ...defaultProps, user: { id: 'userId' } });
+    const component = getShallowComponent({ ...defaultProps, user: { jwt: 'jwt' } });
     component.instance().handleVoteBtnClick();
     expect(component.state('isSubmited')).toBe(true);
     expect(defaultProps.vote).toHaveBeenCalledTimes(1);
-    expect(defaultProps.vote).toHaveBeenLastCalledWith('userId', 'candidateId');
+    expect(defaultProps.vote).toHaveBeenLastCalledWith('jwt', 'candidateId');
   });
 
   test('Snapshot without user id', () => expect(renderer.create(<CandidateDetail {...defaultProps} />).toJSON()).toMatchSnapshot());
