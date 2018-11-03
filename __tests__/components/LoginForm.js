@@ -50,10 +50,10 @@ describe('LoginForm', () => {
     expect(mockEmptyUserFn).toHaveBeenCalledTimes(1);
   });
 
-  test('getDerivedStateFromProps isSubmitted is true and has user _id', () => {
+  test('getDerivedStateFromProps isSubmitted is true and has user id', () => {
     const mockGoBack = jest.fn();
     const nextProps = {
-      user: { _id: true },
+      user: { id: true },
       navigation: { goBack: mockGoBack },
     };
     const prevState = { isSubmitted: true };

@@ -52,7 +52,7 @@ export class LoginForm extends Component<Props, States> {
       nextProps.emptyUser(); // Reset user state to an empty object. So, next time the back-end code still can send a isFail mark when the authentication fails.
       return { isSubmitted: false };
     }
-    if (prevState.isSubmitted && nextProps.user._id) nextProps.navigation.goBack();
+    if (prevState.isSubmitted && nextProps.user.id) nextProps.navigation.goBack();
     return null;
   }
 
