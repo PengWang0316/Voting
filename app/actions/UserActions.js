@@ -54,5 +54,5 @@ export const parserUserFromJwt = jwtMessage => dispatch => axios.get(API_JWTMESS
 
 export const vote = (userId, candidateId) => dispatch => axios.put(API_VOTE).then(() => {
   dispatch(voteSuccess(candidateId));
-  dispatch(addVoteSuccess());
+  dispatch(addVoteSuccess(candidateId));
 }).catch(err => console.error(err));

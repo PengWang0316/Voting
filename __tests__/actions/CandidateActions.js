@@ -35,5 +35,5 @@ describe('CandidateActions', () => {
     });
   });
 
-  test('addVoteSuccess', () => expect(CandidateActions.addVoteSuccess()).toEqual({ type: ADD_VOTE_SUCCESS }));
+  test('addVoteSuccess', () => expect(CandidateActions.addVoteSuccess('candidateId')).toEqual({ type: ADD_VOTE_SUCCESS, candidateId: 'candidateId' }));
 });

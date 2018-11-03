@@ -107,7 +107,10 @@ describe('UserActions', () => {
         type: VOTE_SUCCESS,
         vote_id: candidateId,
       },
-      { type: ADD_VOTE_SUCCESS },
+      {
+        type: ADD_VOTE_SUCCESS,
+        candidateId,
+      },
     ];
     axiosMock.onPut(API_VOTE).reply(200, null);
     const store = mockStore();

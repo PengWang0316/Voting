@@ -10,6 +10,7 @@ const fetchCandidatesInfoSuccess = candidates => ({
 export const fetchCandidatesInfo = () => dispatch => axios.get(API_FETCH_CANDIDATES_INFO)
   .then(({ data }) => dispatch(fetchCandidatesInfoSuccess(data))).catch(err => console.error(err));
 
-export const addVoteSuccess = () => ({
+export const addVoteSuccess = candidateId => ({
   type: ADD_VOTE_SUCCESS,
+  candidateId,
 });
