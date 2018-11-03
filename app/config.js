@@ -12,3 +12,4 @@ export const BASE_URL = 'http://192.168.0.55:8080'; // Development server on the
 // export const CART_PAGE_URL = '/cartPage';
 // export const ORDERS_PAGE_URL = '/ordersPage';
 // export const KITHEN_INTERFACE_PAGE_URL = '/kithenInterfacePage';
+NO_PHOTO_URI = 'https://res.cloudinary.com/orderstaker/image/upload/v1541270969/voding/xxx048-512.png';
