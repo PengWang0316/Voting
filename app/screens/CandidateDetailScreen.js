@@ -15,6 +15,7 @@ export const CandidateDetailScreen = ({ navigation }: Props) => (
   <SafeAreaScreen>
     <CandidateDetail
       candidate={navigation.getParam('candidate')}
+      navigation={navigation}
     />
   </SafeAreaScreen>
 );

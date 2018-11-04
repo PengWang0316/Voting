@@ -2,6 +2,24 @@
 
 exports[`CandidateDetailScreen Snapshot 1`] = `
 <SafeAreaScreen>
-  <CandidateDetail />
+  <CandidateDetail
+    navigation={
+      Object {
+        "getParam": [MockFunction] {
+          "calls": Array [
+            Array [
+              "candidate",
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+      }
+    }
+  />
 </SafeAreaScreen>
 `;
