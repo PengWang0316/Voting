@@ -7,7 +7,7 @@ const candidates = (state = null, action) => {
     case ADD_VOTE_SUCCESS: { // In this case we know we just have two candidates. So, iterating all element is not a big problem.
       const newCandidates = [];
       state.forEach(candidate => {
-        newCandidates.push({ ...candidate, votes: candidate.id === action.candidateId ? candidate.vote + 1 : candidate.vote });
+        newCandidates.push({ ...candidate, votes: candidate.id * 1 === action.candidateId * 1 ? candidate.votes + 1 : candidate.votes });
       });
       return newCandidates;
     }
