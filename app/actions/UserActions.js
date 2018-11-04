@@ -52,7 +52,7 @@ export const loginWithPassword = ({ username, password }) => dispatch => axios.g
 export const parserUserFromJwt = jwtMessage => dispatch => axios.get(API_JWTMESSAGE_VERIFY, { params: { jwtMessage } })
   .then(({ data }) => dispatch(parserUserFromJwtSuccess(data))).catch(err => console.error(err));
 
-export const vote = (jwt, candidateId) => dispatch => axios.put(API_VOTE, { body: { jwt, candidateId } }).then(() => {
+export const vote = (jwt, candidateId) => dispatch => axios.put(API_VOTE, { jwt, candidateId }).then(() => {
   dispatch(voteSuccess(candidateId));
   dispatch(addVoteSuccess(candidateId));
 }).catch(err => console.error(err));
