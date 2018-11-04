@@ -17,7 +17,7 @@ describe('CandidateDetail', () => {
     },
     user: {},
     vote: jest.fn(),
-    navigation: { goBack: jest.fn() },
+    navigation: { navigate: jest.fn() },
   };
   const getShallowComponent = (props = defaultProps) => shallow(<CandidateDetail {...props} />);
 
@@ -32,7 +32,8 @@ describe('CandidateDetail', () => {
     expect(component.state('isSubmited')).toBe(true);
     expect(defaultProps.vote).toHaveBeenCalledTimes(1);
     expect(defaultProps.vote).toHaveBeenLastCalledWith('jwt', 'candidateId');
-    expect(defaultProps.navigation.goBack).toHaveBeenCalledTimes(1);
+    expect(defaultProps.navigation.navigate).toHaveBeenCalledTimes(1);
+    expect(defaultProps.navigation.navigate).toHaveBeenLastCalledWith('Main');
   });
 
   test('Snapshot without user id', () => expect(renderer.create(<CandidateDetail {...defaultProps} />).toJSON()).toMatchSnapshot());

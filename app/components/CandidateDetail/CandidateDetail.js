@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import Styles from './Styles';
 import { vote } from '../../actions/UserActions';
 
+const MAIN_SCREEN = 'Main';
+
 type Props = {
   candidate: Object,
   user: Object,
@@ -26,7 +28,7 @@ export class CandidateDetail extends Component<Props> {
     { isSubmited: true },
     () => {
       this.props.vote(this.props.user.jwt, this.props.candidate.id);
-      this.props.navigation.goBack();
+      this.props.navigation.navigate(MAIN_SCREEN);
     },
   );
 
