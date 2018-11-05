@@ -79,7 +79,7 @@ export const UserInfoScreen = ({ user, navigation, logout }: Props) => {
         />
       </View>
       <View style={Styles.view}>
-        <Text style={Styles.usernameText}>{user.displayName}</Text>
+        <Text style={Styles.usernameText}>{user.name}</Text>
       </View>
       <View style={Styles.btnView}>
         <Button buttonStyle={Styles.logoutBtn} title="LOGOUT" onPress={handleLogoutBtnClick} />

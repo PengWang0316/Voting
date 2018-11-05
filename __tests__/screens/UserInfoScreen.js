@@ -14,7 +14,7 @@ jest.mock('../../app/screens/SafeAreaScreen', () => 'SafeAreaScreen');
 describe('UserInfoScreen', () => {
   const defaultProps = {
     user: {
-      displayName: 'displayName',
+      name: 'displayName',
       avatar: 'avatarUrl',
     },
     navigation: {
