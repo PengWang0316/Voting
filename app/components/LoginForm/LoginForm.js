@@ -39,6 +39,16 @@ export class LoginForm extends Component<Props, States> {
   };
 
   /**
+   * Somehow the test will fail if the Component that extends from Component does not call the super(props) manually.
+   * It could relate to babel, react-native, or metro-react-native-babel-preset.
+   * Will be removed if the problem disappear in the future.
+   * @param {object} props has all props value
+   */
+  constructor(props) {
+    super(props);
+  }
+
+  /**
    * Call the onToggleSnackbar when isSubmitted state is true and props received a null for user.
    * @param {object} nextProps contains the new props value.
    * @param {object} prevState contains the previous state's value.
