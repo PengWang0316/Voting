@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@kevinwang0316/react-native-snackbar-component": "^1.1.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "react": "^16.6.0",
     "react-native": "^0.57.4",
     "react-native-cacheable-image": "^2.0.0",
